@@ -1,0 +1,52 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Eq Hub - Stunt Simulator", "GrapeTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm")
+
+
+
+Section:NewToggle("Auto Farm Word 1", "ToggleInfo", function(state)
+    if state then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EqHub/EqHub/main/AutoFarm"))()
+
+    else
+            while wait(0) do
+game:GetService("TeleportService"):Teleport(game.PlaceId)
+end
+    end
+end)
+
+
+
+Section:NewToggle("Auto Farm Word 2", "ToggleInfo", function(state)
+    if state then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EqHub/EqHub/main/AutoFarm2"))()
+
+    else
+            while wait(0) do
+game:GetService("TeleportService"):Teleport(game.PlaceId)
+end
+    end
+end)
+
+
+
+
+
+
+
+
+local Tab = Window:NewTab("Bring")
+local Section = Tab:NewSection("BringOrbs")
+Section:NewButton("BringOrbs Gems", "ButtonInfo", function()
+local SpawnedOrbs = game.Players.LocalPlayer.Character.HumanoidRootPart
+for i,v in pairs(game.workspace.SpawnedOrbs:GetChildren()) do
+v.CFrame = SpawnedOrbs.CFrame
+wait(0.2)
+end
+local SpawnedOrbs = game.Players.LocalPlayer.Character.HumanoidRootPart
+for i,v in pairs(game.workspace.SpawnedOrbs:GetChildren()) do
+v.CFrame = SpawnedOrbs.CFrame
+wait(0.2)
+end
+end)
